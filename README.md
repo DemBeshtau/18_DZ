@@ -150,7 +150,44 @@ root@inetRouter:~# ip route add 192.168.255.4/30 via 192.168.255.2
 root@inetRouter:~# ip route add 192.168.255.8/30 via 192.168.255.2
 ```
 - Проверка работоспособности развёрнутой инфраструктуры.
-  
+```shell
+vagrant@office1Server:~$ ping -c 1 ya.ru
+PING ya.ru (77.88.44.242) 56(84) bytes of data.
+64 bytes from ya.ru (77.88.44.242): icmp_seq=1 ttl=57 time=350 ms
+
+--- ya.ru ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 350.044/350.044/350.044/0.000 ms
+
+vagrant@office1Server:~$ traceroute ya.ru
+traceroute to ya.ru (77.88.44.242), 30 hops max, 60 byte packets
+ 1  _gateway (192.168.2.129)  0.227 ms  0.212 ms  0.205 ms
+ 2  192.168.255.9 (192.168.255.9)  0.417 ms  0.408 ms  0.568 ms
+ 3  192.168.255.1 (192.168.255.1)  0.668 ms  0.661 ms  0.780 ms
+ 4  10.0.2.2 (10.0.2.2)  0.771 ms  0.721 ms  0.740 ms
+ 5  * * *
+ 6  * * *
+ 7  * * *
+ 8  yandex-peers.crelcom.network (109.200.129.253)  35.393 ms  31.621 ms  31.575 ms
+...
+
+vagrant@office1Server:~$ ping -c 1 192.168.0.2
+PING 192.168.0.2 (192.168.0.2) 56(84) bytes of data.
+64 bytes from 192.168.0.2: icmp_seq=1 ttl=62 time=0.624 ms
+
+--- 192.168.0.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.624/0.624/0.624/0.000 ms
+
+vagrant@office1Server:~$ ping -c 1 192.168.1.2
+PING 192.168.1.2 (192.168.1.2) 56(84) bytes of data.
+64 bytes from 192.168.1.2: icmp_seq=1 ttl=61 time=0.769 ms
+
+--- 192.168.1.2 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.769/0.769/0.769/0.000 ms
+```
+&ensp;&ensp;Для автоматического конфигурирования инфраструктуры подготовлен плейбук Ansible с необходимыми файлами и шаблонами jinja2.  
   
 
   
