@@ -116,7 +116,19 @@ network:
       dhcp6: false
   version: 2
   <ctrl+D>
-``` 
+```
+- Добавление маршрутов по умолчанию на сервера centralServer, office1Router, office2Router, office1Server, office2Server:
+```shell
+root@centralServer:~# ip route add default via 192.168.0.1
+
+root@office1Router:~# ip route add default via 192.168.255.9
+
+root@office2Router:~# ip route add default via 192.168.255.5
+
+root@office1Server:~# ip route add default via 192.168.2.129
+
+root@office2Server:~# ip route add default via 192.168.1.1 
+```   
 
   
 
