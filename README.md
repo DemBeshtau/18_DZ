@@ -44,7 +44,11 @@
 &ensp;&ensp;&ensp;Ansible (https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html).<br/>
 &ensp;&ensp;Все действия проводились с использованием Vagrant 2.4.0, VirtualBox 7.0.18, Ansible 9.4.0 и образа ubuntu/jammy64 версии 20240301.0.0. <br/> 
 ### Ход решения ###
-###### 1. Теоретическая часть ######
+##### 1. Теоретическая часть #####
+- В соответствии с условием теоретической части задания посчитаны данные по подсетям и подготовлена следующая таблица:<br/>
+
+![изображение](https://github.com/DemBeshtau/18_DZ/assets/149678567/b5abdfd8-43eb-4ce7-b108-dd32d6f041fc)
+
 
 
 
