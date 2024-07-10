@@ -128,7 +128,30 @@ root@office2Router:~# ip route add default via 192.168.255.5
 root@office1Server:~# ip route add default via 192.168.2.129
 
 root@office2Server:~# ip route add default via 192.168.1.1 
-```   
+```
+- Добавление на сервер centralRouter маршрутов к подсетям 192.168.1.0/24 и 192.168.2.0/24, а также маршрута по умолчанию:
+```shell
+root@centralRouter:~# ip route add default via 192.168.255.1
+
+root@centralRouter:~# ip route add 192.168.1.0/24 via 192.168.255.6
+
+root@centralRouter:~# ip route add 192.168.2.0/24 via 192.168.255.10 
+```
+- Добавление на сервер inetRouter маршрутов в каждую подсеть:
+```shell
+root@inetRouter:~# ip route add 192.168.1.0/24 via 192.168.255.2
+
+root@inetRouter:~# ip route add 192.168.2.0/24 via 192.168.255.2
+
+root@inetRouter:~# ip route add 192.168.0.0/24 via 192.168.255.2
+
+root@inetRouter:~# ip route add 192.168.255.4/30 via 192.168.255.2
+
+root@inetRouter:~# ip route add 192.168.255.8/30 via 192.168.255.2
+```
+- Проверка работоспособности развёрнутой инфраструктуры.
+  
+  
 
   
 
