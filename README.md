@@ -59,9 +59,24 @@
 
 ![test](https://github.com/DemBeshtau/18_DZ/assets/149678567/84ccfd4a-1526-45a1-a74f-3606bb3f7bea)
 
-- На основании схемф получен список серверов:<br/>
+- На основании схемы получен список серверов:<br/>
+![изображение](https://github.com/DemBeshtau/18_DZ/assets/149678567/9b98d1cc-c922-4910-b802-e041ecbe3055)<br/>
+- В соответствии со схемой в Vagrant-файл добавлены 4 новых сервера, кроме того, к старым серверам добавлены 2 дополнительных интерфейса для соединения сетей офисов.
+- Настройка NAT на сервере inetRouter.
+  Отключение фаервола ufw:
+```shell
+root@inetRouter:~# systemctl stop ufw
+root@inetRouter:~# systemctl disable ufw
+```
+   Установка пакета iptables-persistent для автоматического восстановления правил iptables и добавление необходимых правил фильтрации и NAT:
+```shell
+root@inetRouter:~# apt update; apt install iptables-persistent
+...
+root@inetRouter:~# 
+```
 
-![изображение](https://github.com/DemBeshtau/18_DZ/assets/149678567/9b98d1cc-c922-4910-b802-e041ecbe3055)
+
+  
 
    
 
