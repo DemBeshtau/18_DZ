@@ -17,7 +17,16 @@
    - 192.168.0.32/28 - office hardware
    - 192.168.0.64/26 - wifi
      
-![изображение](https://github.com/DemBeshtau/18_DZ/assets/149678567/c4704775-1c02-4086-a4df-af8ed660be66)
+![изображение](https://github.com/DemBeshtau/18_DZ/assets/149678567/c4704775-1c02-4086-a4df-af8ed660be66)<br/>
+&ensp;&ensp;Таким образом получены слудующие сервера:
+- inetRouter
+- centralRouter
+- office1Router
+- office2Router
+- office1Server
+- office2Server
+
+   
 
   
 
